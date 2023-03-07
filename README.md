@@ -166,6 +166,6 @@ necessario alla sua esecuzione. Le dimensioni di questo registro sono
 solitamente uguali alla lunghezza della parola trattata.
 
 
-# MAR:
+## MAR:
 Un registro che memorizza il contenuto del programm counter e che lo contiene fino a quando l'istruzione contenuta non viene eseguita.
 Quindi, il contenuto é uguale solo che; mentre il programma counter punta alla locazione successiva, il MAR prima finisce l'esecuzione dell'istruzione e poi passa all'istruzione della locazione successiva.
