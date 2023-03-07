@@ -1,25 +1,29 @@
-# registri
+# Sistemi e Reti
 
 
-I registri:
+
+
+
+
+## I registri
 
 Sono dispositiva di memoria a ridotta capacitá (uno o due byte) posti dentro il microprocessore,
 grazie ad essi possiamo manipolare in modo temporaneo dati e indirizzi
 
--) Memoria a breve termine del calcolatore
--) Sono celle di memoria utilizzate per immagazzinare le informazioni necessarie per
-l’esecuzione delle istruzioni
--) Ci sono registri generici (Registri per memorizzare gli operandi delle operazioni da
+- Memoria a breve termine del calcolatore
+- Sono celle di memoria utilizzate per immagazzinare le informazioni necessarie per
+l'esecuzione delle istruzioni
+- Ci sono registri generici (Registri per memorizzare gli operandi delle operazioni da
 eseguire) e registri speciali
-- i registri speciali utilizzati dalla UC per scopi particolari;
-- i registri di uso generale (registri aritmetici)
--) Il loro numero dipende dal tipo di CPU
--) Gli operandi delle istruzioni aritmetico/logiche possono contenere un indirizzo di
+  - i registri speciali utilizzati dalla UC per scopi particolari;
+  - i registri di uso generale (registri aritmetici)
+- Il loro numero dipende dal tipo di CPU
+- Gli operandi delle istruzioni aritmetico/logiche possono contenere un indirizzo di
 registro
 
 
 
-Registri speciali
+## Registri speciali
 1. PC: program counter, registro contatore delle istruzioni -detto IP (instruction
 pointer) in alcune macchine (Intel)
 2. IR: instruction register, registro delle istruzioni
@@ -31,14 +35,15 @@ collegato al bus indirizzi
 FLAGS in alcune macchine (Intel)
 
 
-I Registri Generali sono usati per l’esecuzione di istruzioni memorizzando,
+## I Registri Generali 
+sono usati per l’esecuzione di istruzioni memorizzando,
 ad esempio:
 – il contenuto di una parola di memoria letto dal processore
 – il risultato di un’elaborazione sul contenuto di uno o più registri
 – gli operandi di un’istruzione aritmetica
 
 
-Accumulatore (registro di uso generale)
+## Accumulatore (registro di uso generale)
 E’ senza dubbio uno dei registri più utilizzati in quanto in esso vengono memorizzati i
 risultati delle varie operazioni effettuate dalla ALU ed è interessato anche dalle
 operazioni di ricezione e di invio dei dati. L'accumulatore è quindi un registro dotato di
@@ -57,9 +62,7 @@ trasferiti a quella successiva con una riduzione delle prestazioni minima o null
 
 
 
---------------------------------------------
-
-PC:
+## PC:
 Il Program Counter (letteralmente, contatore del programma) o Instruction Pointer è
 uno speciale registro del processore che contiene l'indirizzo della prossima istruzione
 (opcode) da eseguire nella memoria programma.
@@ -81,16 +84,15 @@ memoria a quell'indirizzo venga prelevato, decodificato ed eseguito.
 l'indirizzo che contiene l' istruzione successiva.
 
 
--------------------------------------------------------
 
-Pile:
+## Pile:
 Le operazioni che si possono pensare per la struttura LIFO sono:
--) Verificare se è piena (IsFull)
--) Verificare se è vuota (IsEmpty)
--) Inserire un elemento (Push)
--) Togliere un elemento (Pop)
--) Far restituire il primo elemento, senza estrarlo (TopElem)
--) Cancellare tutti i dati (Clear)
+- Verificare se è piena (IsFull)
+- Verificare se è vuota (IsEmpty)
+- Inserire un elemento (Push)
+- Togliere un elemento (Pop)
+- Far restituire il primo elemento, senza estrarlo (TopElem)
+- Cancellare tutti i dati (Clear)
 In alcuni casi le strutture LIFO hanno una dimensione limitata, per cui è necessario
 definire un valore massimo di elementi inseribili. Inoltre, per implementare una pila
 servono:
@@ -100,9 +102,9 @@ L’indice deve tener conto di quanti elementi ci sono nella pila.
 Top= 0 →→→→pila vuota
 Top= max→→→→pila piena
 
-----------------------------------------------------------
 
-Code:
+
+## Code:
 Le code
 Con il termine Coda indichiamo una lista di lunghezza variabile che prende il nome di
 Sistema FIFO (First In First Out). Una CODA o QUEUE (leggi “chiù”) è una sequenza
@@ -113,11 +115,46 @@ Enqueue: operazione che corrisponde all’inserimento di un elemento dalla coda
 
 per la struttura Coda (queue) le operazioni “base” sono le
 seguenti:
--) inserire un elemento x in coda (EnQueue(x));
--) togliere un elemento dalla coda (DeQueue());
--) verificare se la coda è vuota (IsEmpty());
--) cancellare tutti i dati (ClearQueue());
--) leggere (senza toglierlo dalla coda) il primo elemento in attesa
+
+- inserire un elemento x in coda (EnQueue(x));
+- togliere un elemento dalla coda (DeQueue());
+- verificare se la coda è vuota (IsEmpty());
+- cancellare tutti i dati (ClearQueue());
+- leggere (senza toglierlo dalla coda) il primo elemento in attesa
 (readHead());
--) nel caso in cui si preveda una coda con capacità massima limitata
+- nel caso in cui si preveda una coda con capacità massima limitata
 verificare se la coda ha raggiunto la sua massima capacità: (IsFull()).
+
+![image](https://user-images.githubusercontent.com/87804260/223403660-3a740247-29f2-4b25-a073-c11255edb4bc.png)
+
+
+## Stack pointer:
+indica l'attuale posizione dello stack nella locazione della memroia del programma, la zona di memoria é organizzata secondo un registro LIFO(Last in, First Out); i dati vengono prelevati a partire dal ultimo dato introdotto fino al primo. É a discrezione del programmatore in quale area della RAM vuole memorizzare lo stack e le sue rispettive dimensioni.
+
+Quando una funzione viene chiamata lo stack pointer viene spostato in basso per fare spazio alle variabili locali della funzione, una volta terminata la funzione, il puntatore si ripristina da solo.
+
+Ci sono due registri riservati alla gestione dello stack: ESP contiene
+l'indirizzo della “cima” dello stack, EBP contiene l'indirizzo della base del frame
+corrente
+![image](https://user-images.githubusercontent.com/87804260/223402951-e2d679d0-f5ad-4c54-83cf-2a2b7e4d2460.png)
+
+Fasi:
+- PUSH <registro>: Posiziona il contenuto del primo registro in cima allo stack
+- POP <registro>: Preleva il contenuto del registro partendo dall'inizio dello stack
+
+![image](https://user-images.githubusercontent.com/87804260/223403368-aed2978e-9b33-49fd-be49-d5fa15b59d3a.png)
+
+
+
+
+## IR:
+La funzione di questo registro è quello di memorizzare l'istruzione che
+deve essere eseguita; tale istruzione è espressa in forma codificata per
+cui la sua esecuzione può avvenire solo dopo la sua traduzione in
+linguaggio macchina. Questa operazione avviene in un decodificatore,
+collegato direttamente al registro istruzioni, che a sua volta attiva la logica di
+controllo.
+In conclusione quindi il registro istruzioni, collegato unidirezionalmente al
+circuito di decodifica, mantiene memorizzata l'istruzione per il tempo
+necessario alla sua esecuzione. Le dimensioni di questo registro sono
+solitamente uguali alla lunghezza della parola trattata.
