@@ -169,3 +169,5 @@ solitamente uguali alla lunghezza della parola trattata.
 ## MAR:
 Un registro che memorizza il contenuto del programm counter e che lo contiene fino a quando l'istruzione contenuta non viene eseguita.
 Quindi, il contenuto é uguale solo che; mentre il programma counter punta alla locazione successiva, il MAR prima finisce l'esecuzione dell'istruzione e poi passa all'istruzione della locazione successiva.
+
+  ![image](https://user-images.githubusercontent.com/87804260/223408189-2b4a5137-3e0d-4144-b158-fc65c85a14aa.png)
