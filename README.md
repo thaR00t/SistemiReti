@@ -49,7 +49,7 @@ risultati delle varie operazioni effettuate dalla ALU ed è interessato anche da
 operazioni di ricezione e di invio dei dati. L'accumulatore è quindi un registro dotato di
 ampie capacità di comunicazione con i vari blocchi che costituiscono il sistema e le sue
 dimensioni generalmente corrispondono alla lunghezza della parola trattata.
-`
+
 L'accesso alla memoria principale è più lento dell'accesso a un registro come
 l'accumulatore perché la tecnologia utilizzata per la memoria principale è più lenta (ma più
 economica) di quella utilizzata per un registro. I primi sistemi informatici elettronici erano
@@ -63,11 +63,15 @@ trasferiti a quella successiva con una riduzione delle prestazioni minima o null
 
 
 ## PC:
-Il Program Counter (letteralmente, contatore del programma) o Instruction Pointer è
-uno speciale registro del processore che contiene l'indirizzo della prossima istruzione
-(opcode) da eseguire nella memoria programma.
+
+Il program counter (PC), anche chiamato instruction pointer (IP) in alcuni processori, è un registro della CPU che contiene l'indirizzo di memoria dell'istruzione corrente che la CPU sta elaborando.
+Durante l'esecuzione di un programma, il contenuto del PC viene costantemente aggiornato dalla CPU in modo che punti all'indirizzo di memoria dell'istruzione successiva da eseguire. Ad ogni esecuzione di un'istruzione, il PC viene incrementato in modo che punti all'indirizzo di memoria dell'istruzione successiva.
+
+oppure:
+
 Il Program Counter, o PC, è il contatore ordinale del processore, ovvero il sistema con
 cui vengono messe in sequenza e avanzate le istruzioni.
+
 La sua caratteristica è quella di essere inizializzato al reset in modo da partire con il
 conteggio dalla locazione 0000h, ovvero dal vettore del RESET.
 In questa locazione si troverà la PRIMA istruzione che verrà eseguita.
@@ -101,6 +105,8 @@ servono:
 L’indice deve tener conto di quanti elementi ci sono nella pila.
 Top= 0 →→→→pila vuota
 Top= max→→→→pila piena
+
+![image](https://user-images.githubusercontent.com/87804260/223405566-ee251106-04d7-4909-9a32-4b7060a666b4.png)
 
 
 
