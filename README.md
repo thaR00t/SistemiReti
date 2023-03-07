@@ -38,9 +38,9 @@ FLAGS in alcune macchine (Intel)
 ## I Registri Generali 
 sono usati per l’esecuzione di istruzioni memorizzando,
 ad esempio:
-– il contenuto di una parola di memoria letto dal processore
-– il risultato di un’elaborazione sul contenuto di uno o più registri
-– gli operandi di un’istruzione aritmetica
+1. il contenuto di una parola di memoria letto dal processore
+2. il risultato di un’elaborazione sul contenuto di uno o più registri
+3. gli operandi di un’istruzione aritmetica
 
 
 ## Accumulatore (registro di uso generale)
