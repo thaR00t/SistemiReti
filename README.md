@@ -171,3 +171,41 @@ Un registro che memorizza il contenuto del programm counter e che lo contiene fi
 Quindi, il contenuto é uguale solo che; mentre il programma counter punta alla locazione successiva, il MAR prima finisce l'esecuzione dell'istruzione e poi passa all'istruzione della locazione successiva.
 
   ![image](https://user-images.githubusercontent.com/87804260/223408189-2b4a5137-3e0d-4144-b158-fc65c85a14aa.png)
+  
+  
+  ## Flag
+  É una variabile booleana che assume i due stati di vero o falso, che segnala se un evento é davvero accadatuo o no.
+  
+  Quando voglia impostare il flag, dobbiamo mettere il suo valore a "vero" altrimenti se voglia resettare il flag lo    impostiamo a "falso".
+  
+
+  ## Registri di stato (Flags)
+  
+  Il registro di stato può essere scomposto in più celle elementari (flags) che
+consentono di ricavare una serie di informazioni relative allo stato delle
+unità interne al microprocessore. Infatti il loro contenuto si modifica,
+passando da "1" a "0" e viceversa, in conseguenza dell'esecuzione di
+determinate operazioni permettendo una verifica dei risultati ottenuti.
+  
+  Il registro dei flag, chiamato cosí anche se non é effettivamente un registro, riesce a contenere 8 bit dei quali 6 utilizzabili.
+  Ogni bit ha un significato:
+- C: Carry Flag: Tiene in memoria il bit piú significativo dell'accomulatore.
+- N: Subtract Flag: Verifica se l'ultima operazione era una sottrazione.
+- P/V: Paritty/Overflow Flag:  l'overflow controlla se vi é stata un operazione aritmetica, mentre Parity se l'operazione era di tipo logico
+  H: Half carry Fag: indica se é avvenuto in riporto tra i 4 bit meno significativi e i 4 piú significativi dell'accomulature.
+ - Z: Zero Flag: Segnala che l'accomulatore di é azzerato.
+ - S: Sign Flag: Risulta ugual al bit piú significativo del risultato in accomulatore
+  
+  ![image](https://user-images.githubusercontent.com/87804260/223413243-4aa0d7aa-8a1a-4f7a-83ad-5dceaa87e6c5.png)
+
+  
+  ## Flag di controllo:
+  
+ - DF = Direction Flag: serve per la manipolazione delle stringhe; vale 0 = manipolazione all'indirizzo minore. vale 1 = la manipolazione parte dall'indirizzo maggiore.
+ - IF = Interrupt Flag: se vale 1= i segnali di interruzione vengono percepiti dalla CPU, altrimenti non vengono calcolati.
+ - TF = Trap Flag: Se vale 1 viene eseguita una trap al termine di ogni istruzione.
+  
+  
+  ## Program Status Word
+  
+Il PSW contiene i bit che segnala stati d'errore e codici di condizione come abilitazione/disabilitazione dell'interrupt e il passaggio da utente a utente privilegiato.
